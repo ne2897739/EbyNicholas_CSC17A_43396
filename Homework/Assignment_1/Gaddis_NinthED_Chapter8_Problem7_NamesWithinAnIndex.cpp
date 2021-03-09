@@ -39,15 +39,15 @@ cout<<search<<" found at index "<<pos<<endl; //Output that name is found in a sp
 return 0;//End of program
 }
 
-void SortSe(string names[])//definition of sorting selection
+void SortSe(string names[])//definition of sorting selection without showing output
 {
-for (int i = 0; i < NUM_NAMES; i++)
+for (int i = 0; i < NUM_NAMES; i++)//If the //Will continue to loop if condition is true
 {
-for (int j = i + 1; j < NUM_NAMES; j++)
+for (int j = i + 1; j < NUM_NAMES; j++)//Will continue to loop if condition is true
 {
-if (names[i].compare(names[j]) > 0)
+if (names[i].compare(names[j]) > 0)//If the condition is true then this will happen
 {
-string temp = names[i];
+string temp = names[i]; //Putting characters and numbers within a chronological string
 names[i] = names[j];
 names[j] = temp;
 }
@@ -57,15 +57,15 @@ names[j] = temp;
 
 int BinSrch(string names[], int l, int r, string x) //function definition for binary search
 {
-while (l <= r)
+while (l <= r)//If the condition is true, the loop will continue
 {
-int m = l + (r - l) / 2;
-if (names[m] == x)
-return m;
-if (names[m].compare(x) < 0)
+int m = l + (r - l) / 2;//Declaring : Holds a real number. The Binary Search starts at the middle for the sequential string data type
+if (names[m] == x) //If the condition is met then this happens
+return m; //return to main function
+if (names[m].compare(x) < 0)//If the condition is true then this will happen
 l = m + 1;
-else
+else //If the condition was not met then this happens instead
 r = m - 1;
 }
-return -1;
+return -1;//return to main function
 }
